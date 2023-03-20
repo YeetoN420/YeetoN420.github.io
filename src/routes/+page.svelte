@@ -5,12 +5,6 @@
 
 
 <style>
-.shop{
-    width: 100px;
-    height: 50px;
-    border-radius: 200px;
-}
-
 .rick{
     margin-top: 50px;
 }
