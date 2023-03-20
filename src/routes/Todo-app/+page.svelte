@@ -6,15 +6,12 @@
 
     let todoArr = [];
     function newElement() {
-        // var li = document.createElement("li")
         var InputValue = document.getElementById("new-task").value;
-        // li.appendChild(document.createTextNode(InputValue));
+      
         if (InputValue === "") {
             alert("You must write a task first!");
             return;
-        } //else {
-        //     document.getElementById("list").appendChild(li);
-        // }
+        } 
 
         todoArr.push(InputValue);
         todoArr = todoArr;
@@ -25,8 +22,7 @@
 <h1>TODO APP</h1>
 <hr />
 <input class="listInput" type="text" id="new-task" name="tasks" placeholder="Write something you want todo..."/>
-<center
-    ><button class="submitButton" type="button" on:click={() => newElement()}>Add To List</button></center>
+<center><button class="submitButton" type="button" on:click={() => newElement()}>Add To List</button></center>
 
 {#each todoArr as obj, i}
     <div class="todothing">

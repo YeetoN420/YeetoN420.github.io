@@ -1,30 +1,83 @@
 <script>
+
+function shuffle(array) {
+      let currentIndex = array.length,  randomIndex;
+
+      while (currentIndex != 0) {
+
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+
+        [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex], array[currentIndex]];
+      }
+
+    return array;
+    }
+
+    let flipcard1 = "";
+    let flipcard2 = "";
+
+
+    let img = ["/choice.jpeg", "/wave.jpeg", "/T-Spawn.jpg", "/Empress.png", "/choice.jpeg", "/wave.jpeg", "/T-Spawn.jpg", "/Empress.png"];
+    let PictureList = shuffle(img);
+
     let cards = [];
-    for (let index = 0; index < 4; index++) {
+    for (let index = 0; index < 8; index++) {
       cards.push({
-        id: 5, // TODO: unique ids per card card
-        img: "/notrick.gif", // TODO: unique images per card card
-        flipped: true,  // TODO: think
+        id: index,                
+        img: PictureList[index], // TODO: unique images per card card
+        flipped: false, 
         completed: false,
       });
     }
     let flipcount = 0;
+
     function flip(card) {
-      // flip card over if two cards are not already flipped
-      // TODO: and card is already not flipped
-      if (card.flipped && flipcount < 2) {
-        // TODO: Probably do what?
-        // flip the cards over after 2s from seeing both cards
-        if (flipcount == 4) {
+      if (!card.flipped && flipcount < 2) {
+         
+
+        if(flipcount == 0){
+            flipcard1 = card.img;
+        }
+
+        else if(flipcount == 1){
+            flipcard2 = card.img;
+        }
+
+        flipcount += 1;
+        card.flipped = true;
+        
+        if (flipcount == 2 && flipcard1 == flipcard2) {
           setTimeout(() => {
             // flip over cards that have not been marked as "completed"
-            cards.forEach((card) => {
-              card.flipped = card.completed;
+            cards.forEach((card) => { 
+            card.completed = card.flipped;
+            });
+            flipcount = 0;
+            cards = cards;   
+            flipcard1 = "";
+            flipcard2 = "";
+          }, 2000);
+        }
+
+        // TODO: Probably do what?
+        // flip the cards over after 2s from seeing both cards
+        else if (flipcount == 2 && flipcard1 != flipcard2) {
+          setTimeout(() => {
+            // flip over cards that have not been marked as "completed"
+            cards.forEach((card) => { 
+            card.flipped = card.completed;
             });
             flipcount = 0;
             cards = cards;
+            flipcard1 = "";
+            flipcard2 = "";
+
           }, 2000);
         }
+        flipcard1 = flipcard1;
+        flipcard2 = flipcard2;
         cards = cards;
       } else {
         alert("chill");
