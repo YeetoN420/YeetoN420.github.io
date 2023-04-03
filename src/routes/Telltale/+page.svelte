@@ -13,7 +13,7 @@
   
   
   <main>
-    <link rel="stylesheet" href="css/pico.min.css">
+    <link rel="stylesheet" href="/pico.min.css">
     <div class="grid">
       <!-- https://svelte.dev/tutorial/key-blocks -->
       {#key story_id}

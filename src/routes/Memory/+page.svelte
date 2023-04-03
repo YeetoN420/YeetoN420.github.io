@@ -99,7 +99,7 @@ function shuffle(array) {
           class="card"
         >
           <img class="front" src={card.img} alt="" />
-          <img class="back" src="front.webp" alt="" />
+          <img class="back" src="Trasch_can.png" alt="" />
         </div>
       {/each}
     </div>
