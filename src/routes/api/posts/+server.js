@@ -6,8 +6,8 @@ export const GET = async () => {
 
   const sortedPosts = allPosts.sort((a, b) => {
     return (
-      new Date(b.meta.date).getMilliseconds() -
-      new Date(a.meta.date).getMilliseconds()
+      new Date(b.meta.date) -
+      new Date(a.meta.date)
     );
   });
 

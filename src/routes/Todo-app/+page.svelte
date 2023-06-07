@@ -49,10 +49,8 @@
     }
 
     .todothing {
-        border-color: black;
+        border: none;
         background-color: white;
-        border: solid;
-        border-width: 2px;
         padding-left: 10px;
         padding-top: 10px;
         font-size: 20px;
@@ -82,13 +80,16 @@
     }
 
     .submitButton {
-        margin-top: 20px;
         margin-bottom: 20px;
-        height: 35px;
-        width: 120px;
-        font-size: 20px;
-        border-color: black;
-        border-width: 3px;
+        margin-top: 20px;
+        padding: 10px 60px;
+        background: #fff;
+        border: 0;
+        cursor: pointer;
+        font-size: 22px;
+        font-weight: 500;
+        border-radius: 30px;
+        outline: none;
     }
 
     .submitButton:active {
@@ -103,7 +104,8 @@
         max-height: 3em;
         margin: auto;
         margin-top: 25px;
-        border-color: black;
+        border: none;
+        outline: none;
         border-width: 3px;
         font-size: 30px;
     }

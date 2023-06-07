@@ -1,0 +1,55 @@
+---
+title: Blog 1 
+date: "2023-5-4"
+---
+
+# Erik Rohlin
+
+## Framsteg:
+
+Sjuk 2 veckor så blev en långsam start men har börjat med lite grundläggande element och funderat på hur och vad jag vill göra 
+
+```js
+
+ <h1 class="header">Ro💲💲in</h1>
+        
+        <button class="navigate"></button>
+        <button class="navigate"></button>
+        <button class="navigate"></button>
+
+        <fieldset class="casinogame">
+            <img alt="Framtida spel" src=""/>
+        </fieldset>
+        
+        <fieldset class="casinogame">
+            <img alt="Framtida spel" src=""/>
+        </fieldset>
+
+        <fieldset class="casinogame">
+            <img alt="Framtida spel" src=""/>
+        </fieldset>
+
+```
+# Framtid
+
+Innan blog 2 ska jag lägga till ett form av bildspel och bestämma mig för vars var och en av dem huvudsakliga elementen ska vara
+
+# Cecklista
+
+förklarande text vid dem andra delarna av sidan + "möjlighet till uttag" ❌
+
+lätt att ta sig runt ❌
+
+spelhjälp och självtest ❌
+
+bildspel ❌
+
+möjlighet till insätting ❌
+
+hyffsad css ❌
+
+egna casinospel ❌
+
+<hr>
+
+

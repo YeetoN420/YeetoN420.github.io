@@ -1,0 +1,142 @@
+
+---
+title: Blog 2 
+date: "2023-5-29"
+---
+
+# Erik Rohlin
+
+## Framsteg:
+
+Har laggts till funktionalitet som en popup vilket ger en tillgång till att mitt nummer i syfte för att swisha. 
+
+Utöver det har jag laggt till ett bildspel som spelar upp olika bilder i en loop, 
+har just ny random bilder men planerar att lägga till bilder som komplimenterar sidan.
+
+<hr>
+
+Koden till bildspelet funkar så att för bildspelet tar den in 4 bilder kan variera om man ändrar let random = Math.floor(Math.random() * 4); och
+let images = ["wave.jpeg", "Empress.png", "favicon.png", "T-Spawn.jpg"]; sedan genereas en slumpmässig bild med 5,5 sek mellanrum.
+
+Koden till popupen fungerar så att det finns ett gömt förminskat fönrster som kommer fram vid ett knapptryck och återgår till sitt 
+gömda läge efter ett annat knapptryck.
+
+# Credit till Easy Turtorials bildspel och Popup 
+
+# Reflektion
+
+Gick smidigt och lätt då Easy Turtorials gav instruktioner och tips som var extremt lätta att följa och förstå. 
+
+```js
+ onMount(()=>{
+
+        setInterval(function(){
+            let random = Math.floor(Math.random() * 4);
+            image.src = images[random]; 
+        }, 5500);
+
+    })
+
+    let image;
+    let images = ["wave.jpeg", "Empress.png", "favicon.png", "T-Spawn.jpg"];
+```
+
+# Popup
+
+```js
+<div class="container">
+            <button type="submit" class="Insättning" on:click={()=>{ericsBooleanToControlThePopup=true}} >Insättning</button>
+
+            <div class:openPopup={ericsBooleanToControlThePopup} class="popup" id="popup">
+                <img alt="" src="Swish.png">
+
+                <h2>Make a deposit by Swishing the number</h2>
+                <h3>076 794 68 94</h3>
+
+                <button type="button" on:click={()=>{ericsBooleanToControlThePopup=false}}>OK</button>
+            </div>
+        </div>
+
+.Insättning{
+    border: 0;
+    cursor: pointer;
+    outline: none;
+}
+
+h3{
+    font-size: 30px;
+    text-decoration: underline;
+}
+
+.popup img{
+    width: 250px;
+    height: 175px;
+    margin-top: -25%;
+    border-radius: 20%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.popup button{
+    width: 100%;
+    
+    padding: 10px 0;
+    background: #6fd649;
+    color: #fff;
+    border: 0;
+    outline: none;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.popup{
+    width: 400px;
+    border-radius: 6px;
+    position: absolute;
+    background: #fff;
+    color: #333;
+    left: 50%;
+    top: 0;
+    transform: translate( -50%, -50%) scale(0.1);
+    text-align: center;
+    padding: 0px 30px 30px;
+    visibility: hidden;
+    transition: transform 0.4s, top 0.4s;
+}
+.openPopup{
+    visibility: visible;
+    top: 50%;
+    transform: translate( -50%, -50%) scale(1);
+}
+
+.container{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+```
+
+# Framtid
+
+Att fixa css är blir det nästa fokuset och även lägga till lite annan funktionalitet
+
+# Cecklista
+
+förklarande text vid dem andra delarna av sidan + "möjlighet till uttag" ❌
+
+lätt att ta sig runt ❌
+
+spelhjälp och självtest ❌
+
+bildspel ✅
+
+möjlighet till "insätting" ✅
+
+hyffsad css ❌
+
+egna casinospel ❌
+
+<hr>
