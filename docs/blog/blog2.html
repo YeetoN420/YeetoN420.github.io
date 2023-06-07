@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="../favicon.png" />
+		<meta name="viewport" content="width=device-width" />
+		<meta http-equiv="content-security-policy" content="">
+		<link href="../_app/immutable/assets/_layout-8003c18b.css" rel="stylesheet">
+		<link href="../_app/immutable/assets/2-1ad0d705.css" rel="stylesheet">
+		<link href="../_app/immutable/assets/tjena-a31e8b55.css" rel="stylesheet">
+		<link rel="modulepreload" href="../_app/immutable/start-7c2918d0.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/index-2473db45.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/singletons-f759cd5e.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/index-940bf9b4.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/preload-helper-41c905a7.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/control-f5b05b5f.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/parse-d12b0d5b.js">
+		<link rel="modulepreload" href="../_app/immutable/components/layout.svelte-e7e588de.js">
+		<link rel="modulepreload" href="../_app/immutable/modules/pages/_layout.js-9cbb603b.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/_layout-da46b06b.js">
+		<link rel="modulepreload" href="../_app/immutable/components/pages/blog/_layout.svelte-ea4b426f.js">
+		<link rel="modulepreload" href="../_app/immutable/components/pages/blog/_path_/_page.svelte-18b158fb.js">
+		<link rel="modulepreload" href="../_app/immutable/modules/pages/blog/_path_/_page.js-1b2ecfc3.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/_page-986b9d1e.js">
+	</head>
+	<body>
+		<div>
+
+
+<main class="container">
+
+  
+  <article><h1>Blog 2</h1>
+    <p>Published: 2023-5-29</p>
+    <h1>Erik Rohlin</h1>
+<h2>Framsteg:</h2>
+<p>Har laggts till funktionalitet som en popup vilket ger en tillgång till att mitt nummer i syfte för att swisha. </p>
+<p>Utöver det har jag laggt till ett bildspel som spelar upp olika bilder i en loop,
+har just ny random bilder men planerar att lägga till bilder som komplimenterar sidan.</p>
+<hr>
+<p>Koden till bildspelet funkar så att för bildspelet tar den in 4 bilder kan variera om man ändrar let random = Math.floor(Math.random() * 4); och
+let images = [“wave.jpeg”, “Empress.png”, “favicon.png”, “T-Spawn.jpg”]; sedan genereas en slumpmässig bild med 5,5 sek mellanrum.</p>
+<p>Koden till popupen fungerar så att det finns ett gömt förminskat fönrster som kommer fram vid ett knapptryck och återgår till sitt
+gömda läge efter ett annat knapptryck.</p>
+<h1>Credit till Easy Turtorials bildspel och Popup</h1>
+<h1>Reflektion</h1>
+<p>Gick smidigt och lätt då Easy Turtorials gav instruktioner och tips som var extremt lätta att följa och förstå. </p>
+<pre class="language-js"><!-- HTML_TAG_START --><code class="language-js"> <span class="token function">onMount</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=></span><span class="token punctuation">&#123;</span>
+
+        <span class="token function">setInterval</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+            <span class="token keyword">let</span> random <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            image<span class="token punctuation">.</span>src <span class="token operator">=</span> images<span class="token punctuation">[</span>random<span class="token punctuation">]</span><span class="token punctuation">;</span> 
+        <span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token number">5500</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">let</span> image<span class="token punctuation">;</span>
+    <span class="token keyword">let</span> images <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"wave.jpeg"</span><span class="token punctuation">,</span> <span class="token string">"Empress.png"</span><span class="token punctuation">,</span> <span class="token string">"favicon.png"</span><span class="token punctuation">,</span> <span class="token string">"T-Spawn.jpg"</span><span class="token punctuation">]</span><span class="token punctuation">;</span></code><!-- HTML_TAG_END --></pre>
+<h1>Popup</h1>
+<pre class="language-js"><!-- HTML_TAG_START --><code class="language-js"><span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"container"</span><span class="token operator">></span>
+            <span class="token operator">&lt;</span>button type<span class="token operator">=</span><span class="token string">"submit"</span> <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"Insättning"</span> <span class="token literal-property property">on</span><span class="token operator">:</span>click<span class="token operator">=</span><span class="token punctuation">&#123;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=></span><span class="token punctuation">&#123;</span>ericsBooleanToControlThePopup<span class="token operator">=</span><span class="token boolean">true</span><span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span> <span class="token operator">></span>Insättning<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">></span>
+
+            <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">:</span>openPopup<span class="token operator">=</span><span class="token punctuation">&#123;</span>ericsBooleanToControlThePopup<span class="token punctuation">&#125;</span> <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"popup"</span> id<span class="token operator">=</span><span class="token string">"popup"</span><span class="token operator">></span>
+                <span class="token operator">&lt;</span>img alt<span class="token operator">=</span><span class="token string">""</span> src<span class="token operator">=</span><span class="token string">"Swish.png"</span><span class="token operator">></span>
+
+                <span class="token operator">&lt;</span>h2<span class="token operator">></span>Make a deposit by Swishing the number<span class="token operator">&lt;</span><span class="token operator">/</span>h2<span class="token operator">></span>
+                <span class="token operator">&lt;</span>h3<span class="token operator">></span><span class="token number">076</span> <span class="token number">794</span> <span class="token number">68</span> <span class="token number">94</span><span class="token operator">&lt;</span><span class="token operator">/</span>h3<span class="token operator">></span>
+
+                <span class="token operator">&lt;</span>button type<span class="token operator">=</span><span class="token string">"button"</span> <span class="token literal-property property">on</span><span class="token operator">:</span>click<span class="token operator">=</span><span class="token punctuation">&#123;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=></span><span class="token punctuation">&#123;</span>ericsBooleanToControlThePopup<span class="token operator">=</span><span class="token boolean">false</span><span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token operator">></span><span class="token constant">OK</span><span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">></span>
+            <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+
+<span class="token punctuation">.</span>Insättning<span class="token punctuation">&#123;</span>
+    <span class="token literal-property property">border</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token literal-property property">cursor</span><span class="token operator">:</span> pointer<span class="token punctuation">;</span>
+    <span class="token literal-property property">outline</span><span class="token operator">:</span> none<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+h3<span class="token punctuation">&#123;</span>
+    font<span class="token operator">-</span>size<span class="token operator">:</span> 30px<span class="token punctuation">;</span>
+    text<span class="token operator">-</span>decoration<span class="token operator">:</span> underline<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token punctuation">.</span>popup img<span class="token punctuation">&#123;</span>
+    <span class="token literal-property property">width</span><span class="token operator">:</span> 250px<span class="token punctuation">;</span>
+    <span class="token literal-property property">height</span><span class="token operator">:</span> 175px<span class="token punctuation">;</span>
+    margin<span class="token operator">-</span>top<span class="token operator">:</span> <span class="token operator">-</span><span class="token number">25</span><span class="token operator">%</span><span class="token punctuation">;</span>
+    border<span class="token operator">-</span>radius<span class="token operator">:</span> <span class="token number">20</span><span class="token operator">%</span><span class="token punctuation">;</span>
+    box<span class="token operator">-</span>shadow<span class="token operator">:</span> <span class="token number">0</span> 2px 5px <span class="token function">rgba</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token punctuation">.</span>popup button<span class="token punctuation">&#123;</span>
+    <span class="token literal-property property">width</span><span class="token operator">:</span> <span class="token number">100</span><span class="token operator">%</span><span class="token punctuation">;</span>
+    
+    <span class="token literal-property property">padding</span><span class="token operator">:</span> 10px <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token literal-property property">background</span><span class="token operator">:</span> #6fd649<span class="token punctuation">;</span>
+    <span class="token literal-property property">color</span><span class="token operator">:</span> #fff<span class="token punctuation">;</span>
+    <span class="token literal-property property">border</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token literal-property property">outline</span><span class="token operator">:</span> none<span class="token punctuation">;</span>
+    font<span class="token operator">-</span>size<span class="token operator">:</span> 18px<span class="token punctuation">;</span>
+    border<span class="token operator">-</span>radius<span class="token operator">:</span> 4px<span class="token punctuation">;</span>
+    <span class="token literal-property property">cursor</span><span class="token operator">:</span> pointer<span class="token punctuation">;</span>
+    box<span class="token operator">-</span>shadow<span class="token operator">:</span> <span class="token number">0</span> 5px 5px <span class="token function">rgba</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token punctuation">.</span>popup<span class="token punctuation">&#123;</span>
+    <span class="token literal-property property">width</span><span class="token operator">:</span> 400px<span class="token punctuation">;</span>
+    border<span class="token operator">-</span>radius<span class="token operator">:</span> 6px<span class="token punctuation">;</span>
+    <span class="token literal-property property">position</span><span class="token operator">:</span> absolute<span class="token punctuation">;</span>
+    <span class="token literal-property property">background</span><span class="token operator">:</span> #fff<span class="token punctuation">;</span>
+    <span class="token literal-property property">color</span><span class="token operator">:</span> #<span class="token number">333</span><span class="token punctuation">;</span>
+    <span class="token literal-property property">left</span><span class="token operator">:</span> <span class="token number">50</span><span class="token operator">%</span><span class="token punctuation">;</span>
+    <span class="token literal-property property">top</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token literal-property property">transform</span><span class="token operator">:</span> <span class="token function">translate</span><span class="token punctuation">(</span> <span class="token operator">-</span><span class="token number">50</span><span class="token operator">%</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">50</span><span class="token operator">%</span><span class="token punctuation">)</span> <span class="token function">scale</span><span class="token punctuation">(</span><span class="token number">0.1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    text<span class="token operator">-</span>align<span class="token operator">:</span> center<span class="token punctuation">;</span>
+    <span class="token literal-property property">padding</span><span class="token operator">:</span> 0px 30px 30px<span class="token punctuation">;</span>
+    <span class="token literal-property property">visibility</span><span class="token operator">:</span> hidden<span class="token punctuation">;</span>
+    <span class="token literal-property property">transition</span><span class="token operator">:</span> transform <span class="token number">0</span><span class="token punctuation">.</span>4s<span class="token punctuation">,</span> top <span class="token number">0</span><span class="token punctuation">.</span>4s<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token punctuation">.</span>openPopup<span class="token punctuation">&#123;</span>
+    <span class="token literal-property property">visibility</span><span class="token operator">:</span> visible<span class="token punctuation">;</span>
+    <span class="token literal-property property">top</span><span class="token operator">:</span> <span class="token number">50</span><span class="token operator">%</span><span class="token punctuation">;</span>
+    <span class="token literal-property property">transform</span><span class="token operator">:</span> <span class="token function">translate</span><span class="token punctuation">(</span> <span class="token operator">-</span><span class="token number">50</span><span class="token operator">%</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">50</span><span class="token operator">%</span><span class="token punctuation">)</span> <span class="token function">scale</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token punctuation">.</span>container<span class="token punctuation">&#123;</span>
+    <span class="token literal-property property">width</span><span class="token operator">:</span> <span class="token number">100</span><span class="token operator">%</span><span class="token punctuation">;</span>
+    <span class="token literal-property property">height</span><span class="token operator">:</span> 100px<span class="token punctuation">;</span>
+    <span class="token literal-property property">display</span><span class="token operator">:</span> flex<span class="token punctuation">;</span>
+    align<span class="token operator">-</span>items<span class="token operator">:</span> center<span class="token punctuation">;</span>
+    justify<span class="token operator">-</span>content<span class="token operator">:</span> center<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span></code><!-- HTML_TAG_END --></pre>
+<h1>Framtid</h1>
+<p>Att fixa css är blir det nästa fokuset och även lägga till lite annan funktionalitet</p>
+<h1>Cecklista</h1>
+<p>förklarande text vid dem andra delarna av sidan + “möjlighet till uttag” ❌</p>
+<p>lätt att ta sig runt ❌</p>
+<p>spelhjälp och självtest ❌</p>
+<p>bildspel ✅</p>
+<p>möjlighet till “insätting” ✅</p>
+<p>hyffsad css ❌</p>
+<p>egna casinospel ❌</p>
+<hr></article></main>
+
+
+		<script type="module" data-sveltekit-hydrate="4kn16l">
+			import { start } from "../_app/immutable/start-7c2918d0.js";
+
+			start({
+				env: {},
+				paths: {"base":"","assets":""},
+				target: document.querySelector('[data-sveltekit-hydrate="4kn16l"]').parentNode,
+				version: "1686098470432",
+				hydrate: {
+					node_ids: [0, 2, 7],
+					data: [null,null,null],
+					form: null
+				}
+			});
+		</script>
+	</div>
+	</body>
+</html>
