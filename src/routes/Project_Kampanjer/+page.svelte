@@ -10,19 +10,19 @@
 
 
 <div class="Navigation-buttons">
-    <form action="http://localhost:5173/Project">
+    <form action="http://yeeton420.github.io/Project">
         <button class="navigate" type="submit">Hem</button>
     </form>
     
-    <form action="http://localhost:5173/Project_Kampanjer">
+    <form action="http://yeeton420.github.io/Project_Kampanjer">
         <button class="navigate" type="submit">Kampanjer</button>
     </form>
     
-    <form action="http://localhost:5173/Project_Regler_och_villkor">
+    <form action="http://yeeton420.github.io/Project_Regler_och_villkor">
         <button class="navigate" type="submit">Regler och villkor</button>
     </form>
     
-    <form action="http://localhost:5173/Project_Insättningar_och_uttag">
+    <form action="http://yeeton420.github.io/Project_Insättningar_och_uttag">
         <button class="navigate" type="submit">Uttag</button>
     </form>
 </div>
